@@ -3,11 +3,38 @@
 # William Ponton
 # 5.8.21
 # Specification of the Prompt class
+# The Song class attributes:
+
+- genre
+- tempo
+- time_signature
+- key_signature
+- chord_progression
+- drum_machines
+- instruments
+- pedals
+- synths
+- samplers
 '''
 
 # import packages
 
-# Prompt class
+# Song class
 class Song():
-  __init__ = (self, )
-  def
+  # Song class constructor
+  def __init__(self, genre, tempo, time_signature, key_signature, chord_progression, drum_machines, instruments, pedals, synths, samplers):
+    self.genre = genre
+    self.tempo = tempo
+    self.time_signature = time_signature
+    self.key_signature = key_signature
+    self.chord_progression = chord_progression
+    self.drum_machines = drum_machines
+    self.instruments = instruments
+    self.pedals = pedals
+    self.synths = synths
+    self.samplers = samplers
+  
+  # some internal class function
+  def __str__(self):
+    output = '%s + i%s' % (self.tempo, self.genre) 
+    return output  

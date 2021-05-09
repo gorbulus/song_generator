@@ -1,5 +1,5 @@
 '''
-# stringLiterals.py
+# string_literals.py
 # William Ponton
 # 5.8.21
 # Collection of the string literals used in the program
@@ -9,5 +9,5 @@
 
 # test_output
 def test_output():
-  test = "Hello world ~ from stringLiterals.py"
+  test = "Hello world ~ from string_literals.py"
   return print(test)

@@ -9,7 +9,9 @@
 
 # impoart packages
 import song_generator.generator as gen
+import song_generator.Song
 import song_generator.string_literals as lit
+
 # main funtion
 def main():
 
