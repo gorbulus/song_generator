@@ -1,4 +1,4 @@
--'''
+'''
 # Song.py
 # William Ponton
 # 5.8.21
@@ -34,7 +34,7 @@ class Song():
     self.synths = synths
     self.samplers = samplers
   
-  # some internal class function
+  # string representation of the class
   def __str__(self):
-    output = '%s + i%s' % (self.tempo, self.genre) 
+    output = 'Tempo: %s\nGenre: %s' % (self.tempo, self.genre) 
     return output  

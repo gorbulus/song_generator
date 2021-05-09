@@ -9,7 +9,7 @@
 
 # impoart packages
 import song_generator.generator as gen
-import song_generator.Song
+import song_generator.SongClass as sc
 import song_generator.string_literals as lit
 
 # main funtion
@@ -19,8 +19,25 @@ def main():
   print("Hello world ~ from main.py")
   gen.test_output()
   lit.test_output()
+
+  mySong = sc.Song("Metal", 120, "4/4", "E minor", "I V III VII", "Volca Beats", "Gibson SG", "Wampler Tumnus", "Volca FM", "Digitakt")
+  
+  print(str(mySong))
   return
 
 # control initiating event
 if __name__ == '__main__':
   main()
+
+  '''
+  - genre
+- tempo
+- time_signature
+- key_signature
+- chord_progression
+- drum_machines
+- instruments
+- pedals
+- synths
+- samplers
+  '''
