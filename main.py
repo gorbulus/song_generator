@@ -9,47 +9,40 @@
 
 # impoart packages
 import song_generator.generator as gen
-import song_generator.string_literals as lit
+import song_generator.string_literals as s_lit
 import song_generator.song_data as s_data
+import song_generator.tests as test
 
 # Song class
 from song_generator.SongClass import Song
 
 # main funtion
 def main():
-
-  # test output
-  print("Hello world ~ from main.py")
-  gen.test_output()
-  lit.test_output()
-  s_data.test_output()
   
-  # create a copy of the song_data_dict
-  # save the values for each key into the variables used in the Song constructor
-  dict_copy = s_data.song_data_dict
-  genres = dict_copy['genres']
-  tempos = dict_copy['tempos']
-  time_signatures = dict_copy['time_signatures']
-  key_signatures = dict_copy['key_signatures']
-  chord_progressions = dict_copy['chord_progressions']
-  drum_machines = dict_copy['drum_machines']
-  instruments = dict_copy['instruments']
-  pedals = dict_copy['pedals']
-  synths = dict_copy['synths']
-  samplers = dict_copy['samplers']
+  # test output from each import file
+  test.test_import_files()
 
-  mySong = dict_copy
-  newSong = Song(genres, tempos, time_signatures, key_signatures, chord_progressions, drum_machines, instruments, pedals, synths, samplers)
-
-  print(str(newSong))
-
+  # testing Song object creation with literal constructors
   mySong = Song('Metal', 120, '4/4', 'E minor', 'IV', 'Arturia Drumbute', 'Ibanex RG (blue flame)', 'Catalinbread Octopussy', 'Arturia MicroBrute', 'Elektron Digitakt')
-
+  
+  # testing methods in Song class
+  print("\n\nUsing hardcoded constructor for the Song class")
   print(str(mySong))
-  
-  
-  
-  return
+
+  # TODO - fix get_random_parameters function in SongClass  
+  # this should take a Song object and create save random choices back
+  mySong = mySong.get_random_parameters(mySong)
+  print("Using the get_random_parameters function in the Song class")
+  print(str(mySong))
+
+  # create a Song object from the gen.generate_parameters() method
+  myDict = {}
+  myDict = gen.generate_parameters(myDict)
+  print("Using the gen.generate_parameters function in the generate.py file (converts dictionary to Song class)")
+  print(myDict)
+  print(type(myDict))
+
+  return 0
 
 # control initiating event
 if __name__ == '__main__':

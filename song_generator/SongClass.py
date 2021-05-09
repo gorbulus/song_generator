@@ -18,6 +18,8 @@
 '''
 
 # import packages
+import song_generator.generator as gen
+
 
 # Song class
 class Song():
@@ -34,7 +36,18 @@ class Song():
     self.synths = synths
     self.samplers = samplers
   
+  # test_output
+  def test_output():
+    test = "Hello world ~ from Song class.py"
+    return print(test)
+
   # string representation of the class
   def __str__(self):
-    output = 'Genre: %s\nTempo: %s\nTime Signature: %s\nKey Signature: %s\nChord Progression: %s\nDrum Machines: %s\nInstruments: %s\nPedals: %s\nSynths: %s\nSamplers: %s\n' % (self.tempo, self.genre, self.time_signature, self.key_signature, self.chord_progression, self.drum_machines, self.instruments, self.pedals, self.synths, self.samplers) 
-    return output  
+    output = 'Genre: %s\nTempo: %s\nTime Signature: %s\nKey Signature: %s\nChord Progression: %s\nDrum Machines: %s\nInstruments: %s\nPedals: %s\nSynths: %s\nSamplers: %s\n' % (self.genre, self.tempo, self.time_signature, self.key_signature, self.chord_progression, self.drum_machines, self.instruments, self.pedals, self.synths, self.samplers) 
+    return output
+  
+  # randomized song parameters
+  @staticmethod
+  def get_random_parameters(self):
+    gen.generate_parameters(self)
+    return
