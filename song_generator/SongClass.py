@@ -18,8 +18,12 @@
 '''
 
 # import packages
+import random
 import song_generator.generator as gen
+import song_generator.song_data as s_data
 
+# set the seed for random
+random.seed()
 
 # Song class
 class Song():
@@ -48,6 +52,19 @@ class Song():
   
   # randomized song parameters
   @staticmethod
-  def get_random_parameters(self):
-    gen.generate_parameters(self)
-    return
+  def get_random_parameters(self, **kwargs):
+    dict_copy = s_data.song_data_dict
+    # set values for Song class constructor
+    genres = random.choice(dict_copy['genres'])
+    tempos = random.randrange(75, 150)
+    time_signatures = random.choice(dict_copy['time_signatures'])
+    key_signatures = random.choice(dict_copy['key_signatures'])
+    chord_progressions = random.choice(dict_copy['chord_progressions'])
+    drum_machines = random.choice(dict_copy['drum_machines'])
+    instruments = random.choice(dict_copy['instruments'])
+    pedals = random.choice(dict_copy['pedals'])
+    synths = random.choice(dict_copy['synths'])
+    samplers = random.choice(dict_copy['samplers'])
+    # instantiate a new Song object using the constructor variables
+    mySong = Song(genres, tempos, time_signatures, key_signatures, chord_progressions, drum_machines, instruments, pedals, synths, samplers)
+    return mySong

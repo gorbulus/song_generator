@@ -9,7 +9,6 @@
 # import packages
 import random
 import song_generator.song_data as s_data
-import song_generator.string_literals as lit
 from song_generator.SongClass import Song
 
 # test_output

@@ -22,28 +22,39 @@ def main():
   # test output from each import file
   test.test_import_files()
 
+  # welcome message
+  s_lit.welcome()
+
+  # Case 1
   # testing Song object creation with literal constructors
+  s_lit.case_1()
+  # make a new Song() object, mySong, and instantiate by hardcoding
   mySong = Song('Metal', 120, '4/4', 'E minor', 'IV', 'Arturia Drumbute', 'Ibanex RG (blue flame)', 'Catalinbread Octopussy', 'Arturia MicroBrute', 'Elektron Digitakt')
-  
+  # display the results
+  print(str(mySong))
+
+  # Case 2
   # testing methods in Song class
-  print("\n\nUsing hardcoded constructor for the Song class")
-  print(str(mySong))
+  s_lit.case_2()
+  # call the Song.get_random_parameters(mySong) function on the mySong object
+  newSong = mySong.get_random_parameters(mySong)
+  # display the results
+  print(str(newSong))
 
-  # TODO - fix get_random_parameters function in SongClass  
-  # this should take a Song object and create save random choices back
-  mySong = mySong.get_random_parameters(mySong)
-  print("Using the get_random_parameters function in the Song class")
-  print(str(mySong))
-
+  # Case 3
   # create a Song object from the gen.generate_parameters() method
+  s_lit.case_3() 
+  # create a new dictionary
   myDict = {}
+  # call the generate_parameters(myDict) function to turn into a randomized Song()
   myDict = gen.generate_parameters(myDict)
-  print("Using the gen.generate_parameters function in the generate.py file (converts dictionary to Song class)")
+  # display the results
   print(myDict)
+  # show that dict was converted to Song()
   print(type(myDict))
 
   return 0
-
+  
 # control initiating event
 if __name__ == '__main__':
   main()

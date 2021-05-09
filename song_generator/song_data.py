@@ -17,13 +17,14 @@ Keys:
 - samplers
 '''
 
-import json
+# import packages
 import random
 from collections import defaultdict
 
 random.seed()
 
 ''''TODO - make the data into a JSON file and parse the JSON object into a Python Dictionary
+import json
 with open('my_dict.json', 'w') as f:
     json.dump(my_dict, f)
 
@@ -51,6 +52,8 @@ samplers = ['Korg Volca Sample','Elektron DigiTakt','Eketron Model:Sample','Beat
 # list of lists 
 chord_progressions = ['I','IV','III','V','VII','VI']
 
+# song_data_dict
+# a dictionary that holds all the song parameter data
 song_data_dict = {
   'genres' : genres,
   'tempos' : random.randrange(75,150),
