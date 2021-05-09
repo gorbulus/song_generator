@@ -36,5 +36,5 @@ class Song():
   
   # string representation of the class
   def __str__(self):
-    output = 'Tempo: %s\nGenre: %s' % (self.tempo, self.genre) 
+    output = 'Genre: %s\nTempo: %s\nTime Signature: %s\nKey Signature: %s\nChord Progression: %s\nDrum Machines: %s\nInstruments: %s\nPedals: %s\nSynths: %s\nSamplers: %s\n' % (self.tempo, self.genre, self.time_signature, self.key_signature, self.chord_progression, self.drum_machines, self.instruments, self.pedals, self.synths, self.samplers) 
     return output  
